@@ -25,6 +25,7 @@ public class changePasswordTest extends testBase{
 		String expectedMsg = "Your password has been updated!";
 		Assert.assertEquals(actualMsg, expectedMsg, "Wrong Message is displayed");
 		//asdasdasd
+		//asdasdasd
 	}
 	
 	
