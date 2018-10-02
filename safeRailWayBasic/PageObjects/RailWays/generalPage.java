@@ -85,10 +85,17 @@ public class generalPage {
 	}
 
 	public WebElement waitForControlStable(WebElement element) throws InterruptedException {
+		System.out.println("Zo");	
 		WebDriverWait wait = new WebDriverWait(Constant.WEBDRIVER, 20);
-		wait.until(ExpectedConditions.elementToBeClickable(element));
-		
-//		System.out.println(element.isDisplayed());	
+		System.out.println("Zo");	
+//		wait.until(ExpectedConditions.elementToBeClickable(element));
+//		System.out.println("Zo");	
+//		wait.until(ExpectedConditions.visibilityOf(element));
+//		System.out.println("Zo");	
+		wait.until(ExpectedConditions.stalenessOf(element));
+		System.out.println("Ra");
+		System.out.println(element.isDisplayed());	
+		System.out.println(element.isEnabled());
 //		do {
 //			Constant.WEBDRIVER.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 //			System.out.println(element.isDisplayed() + " isDisplayed ");

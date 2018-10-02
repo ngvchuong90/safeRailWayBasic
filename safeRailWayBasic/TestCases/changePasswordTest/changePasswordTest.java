@@ -24,7 +24,9 @@ public class changePasswordTest extends testBase{
 				.gotoChangePasswordPage().changePassword(acc.getPassword(), password, password).getSuccessMsg();
 		String expectedMsg = "Your password has been updated!";
 		Assert.assertEquals(actualMsg, expectedMsg, "Wrong Message is displayed");
+		//asdasdasd
 	}
+	
 	
 //	@Test
 //	public void TC12() {

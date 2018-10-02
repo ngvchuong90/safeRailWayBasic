@@ -1,5 +1,7 @@
 package testCondition;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -15,6 +17,7 @@ public class testBase {
 		System.setProperty("webdriver.chrome.driver", Utilities.getProjectPath() + "\\Executables\\chromedriver.exe");
 		Constant.WEBDRIVER = new ChromeDriver();
 		Constant.WEBDRIVER.manage().window().maximize();
+		Constant.WEBDRIVER.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
 	@AfterMethod

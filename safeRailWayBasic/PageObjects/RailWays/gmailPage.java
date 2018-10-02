@@ -11,7 +11,7 @@ import Constant.Constant;
 
 public class gmailPage extends generalPage {
 	// Locators
-	private final By txtGmail = By.xpath("//input[@type='email']");
+	private final By txtGmail = By.xpath("//input[@id='identifierId']");
 	private final By btnNext = By.xpath("//span[text()='Next']");
 	private final By txtGpass = By.xpath("//input[@type='password']");
 	private final By linkConfirmation = By.xpath("//a[contains(.,'Confirm?confirmationCode')]");
@@ -49,11 +49,12 @@ public class gmailPage extends generalPage {
 		this.getTxtGmail().sendKeys(email);
 		this.getBtnNext().click();
 		try {
-			this.waitForControlStable(getTxtGpass()).clear();;
+			this.waitForControlStable(getTxtGpass());
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println("Đã chờ");
 		this.getTxtGpass().sendKeys(password);
 		this.getBtnNext().click();
 	}
@@ -64,6 +65,8 @@ public class gmailPage extends generalPage {
 
 		gotoGmailPage();
 		loginGmail(Constant.GMAIL_USER, Constant.GMAIL_PASS);
+		
+		System.out.println("Đã login");
 		try {
 			Thread.sleep(10000);
 		} catch (InterruptedException e) {
